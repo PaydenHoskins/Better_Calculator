@@ -2,7 +2,7 @@
 'RCET2265
 'Spring 2025
 'Better Calculator
-https://github.com/PaydenHoskins/Better_Calculator.git
+'https://github.com/PaydenHoskins/Better_Calculator.git
 
 Option Explicit On
 Option Strict On
