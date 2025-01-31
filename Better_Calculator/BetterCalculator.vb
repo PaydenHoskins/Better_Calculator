@@ -5,6 +5,7 @@ Option Strict On
 'Spring 2025
 'Better Calculator
 
+Imports System.CodeDom
 Imports System.ComponentModel.Design
 Imports System.Linq.Expressions
 
@@ -15,7 +16,8 @@ Module BetterCalculator
         Dim SecondNumber As Integer
         Dim GetOutOfHere As Boolean
         Dim UserInput As String
-        Dim Operation As String
+        Dim Operation As Integer
+
         Do
             Do
                 GetOutOfHere = False
@@ -34,7 +36,9 @@ Module BetterCalculator
                     End If
                 End Try
             Loop While GetOutOfHere = False
+
             GetOutOfHere = False
+
             Do While UserInput <> "Q" And GetOutOfHere = False
                 Console.WriteLine("Type 'Q' at any point to Quit")
                 Console.WriteLine("Enter 2nd Number: ")
@@ -42,6 +46,7 @@ Module BetterCalculator
                 Console.WriteLine($"You entered {UserInput}.")
                 Try
                     SecondNumber = CInt(UserInput)
+                    GetOutOfHere = True
                 Catch ex As Exception
                     If UserInput <> "Q" Then
                         Console.WriteLine($"{UserInput} is not a whole number...")
@@ -50,6 +55,7 @@ Module BetterCalculator
                     End If
                 End Try
             Loop
+
             Do While UserInput <> "Q"
                 Console.WriteLine("Select Opertion: ")
                 Console.WriteLine("1.Add")
@@ -57,11 +63,26 @@ Module BetterCalculator
                 Console.WriteLine("3.Multiply")
                 Console.WriteLine("4.Divide")
                 Console.WriteLine("Input you choice below.")
-                Operation = Console.ReadLine()
+                UserInput = Console.ReadLine()
+                Try
+                    Operation = CInt(UserInput)
 
-                Select Case UserInput
-                    Case Operation = "1"
-                End Select
+                    If Operation = 1 Then
+                        Console.WriteLine($"{FirstNumber} + {SecondNumber} = " & SecondNumber + FirstNumber)
+                    ElseIf Operation = 2 Then
+                        Console.WriteLine($"{FirstNumber} - {SecondNumber} = " & SecondNumber - FirstNumber)
+                    ElseIf Operation = 3 Then
+                        Console.WriteLine($"{FirstNumber} * {SecondNumber} = " & SecondNumber * FirstNumber)
+                    ElseIf Operation = 4 Then
+                        Console.WriteLine($"{FirstNumber} / {SecondNumber} = " & SecondNumber / FirstNumber)
+                    ElseIf Operation > 4 Then
+                        Console.WriteLine($"You choose {Operation} please choose 1-4.")
+                    ElseIf Operation < 1 Then
+                        Console.WriteLine($"You cho0se {Operation} please choose 1-4.")
+                    End If
+                Catch ex As Exception
+                    Console.WriteLine($"You cho0se {Operation} please choose 1-4.")
+                End Try
             Loop
         Loop While UserInput <> "Q"
     End Sub
