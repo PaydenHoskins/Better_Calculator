@@ -34,8 +34,8 @@ Module BetterCalculator
                     End If
                 End Try
             Loop While GetOutOfHere = False
-
-            Do While UserInput <> "Q"
+            GetOutOfHere = False
+            Do While UserInput <> "Q" And GetOutOfHere = False
                 Console.WriteLine("Type 'Q' at any point to Quit")
                 Console.WriteLine("Enter 2nd Number: ")
                 UserInput = Console.ReadLine()
@@ -50,14 +50,19 @@ Module BetterCalculator
                     End If
                 End Try
             Loop
+            Do While UserInput <> "Q"
+                Console.WriteLine("Select Opertion: ")
+                Console.WriteLine("1.Add")
+                Console.WriteLine("2.Subtract")
+                Console.WriteLine("3.Multiply")
+                Console.WriteLine("4.Divide")
+                Console.WriteLine("Input you choice below.")
+                Operation = Console.ReadLine()
 
-            Console.WriteLine("Select Opertion: ")
-            Console.WriteLine("1.Add")
-            Console.WriteLine("2.Subtract")
-            Console.WriteLine("3.Multiply")
-            Console.WriteLine("4.Divide")
-            Console.WriteLine("Input you choice below.")
-            Operation = Console.ReadLine()
+                Select Case UserInput
+                    Case Operation = "1"
+                End Select
+            Loop
         Loop While UserInput <> "Q"
     End Sub
 
