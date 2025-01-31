@@ -1,9 +1,11 @@
-﻿Option Explicit On
-Option Strict On
+﻿
 'Payden Hoskins
 'RCET2265
 'Spring 2025
 'Better Calculator
+
+Option Explicit On
+Option Strict On
 
 Imports System.CodeDom
 Imports System.ComponentModel.Design
