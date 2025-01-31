@@ -13,22 +13,30 @@ Module BetterCalculator
         Dim FirstNumber As Integer
         Dim SecondNumber As Integer
         Dim UserInput As String
-
         Do
-            Console.WriteLine("Type 'Q' at any point to Quit")
-            Console.WriteLine("Enter 1st Number: ")
+                Console.WriteLine("Type 'Q' at any point to Quit")
+                Console.WriteLine("Enter 1st Number: ")
+                UserInput = Console.ReadLine()
+                Console.WriteLine($"You entered {UserInput}.")
+                Try
+                    FirstNumber = CInt(UserInput)
+                Catch ex As Exception
+                    If UserInput <> "Q" Then
+                        Console.WriteLine($"{UserInput} is not a whole number...")
+                    End If
+                End Try
+
+                Console.WriteLine("Type 'Q' at any point to Quit")
+            Console.WriteLine("Enter 2st Number: ")
             UserInput = Console.ReadLine()
             Console.WriteLine($"You entered {UserInput}.")
             Try
-                FirstNumber = CInt(UserInput)
+                SecondNumber = CInt(UserInput)
             Catch ex As Exception
                 If UserInput <> "Q" Then
                     Console.WriteLine($"{UserInput} is not a whole number...")
                 End If
             End Try
-
-
-
         Loop While UserInput <> "Q"
 
     End Sub
