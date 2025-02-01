@@ -80,10 +80,10 @@ Module BetterCalculator
                     ElseIf Operation > 4 Then
                         Console.WriteLine($"You choose {Operation} please choose 1-4.")
                     ElseIf Operation < 1 Then
-                        Console.WriteLine($"You cho0se {Operation} please choose 1-4.")
+                        Console.WriteLine($"You choose {Operation} please choose 1-4.")
                     End If
                 Catch ex As Exception
-                    Console.WriteLine($"You cho0se {Operation} please choose 1-4.")
+                    Console.WriteLine($"You choose {Operation} please choose 1-4.")
                 End Try
             Loop
         Loop While UserInput <> "Q"
