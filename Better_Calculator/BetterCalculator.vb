@@ -57,8 +57,8 @@ Module BetterCalculator
                     End If
                 End Try
             Loop
-
-            Do While UserInput <> "Q"
+            GetOutOfHere = False
+            Do While UserInput <> "Q" And GetOutOfHere = False
                 Console.WriteLine("Select Opertion: ")
                 Console.WriteLine("1.Add")
                 Console.WriteLine("2.Subtract")
@@ -71,12 +71,16 @@ Module BetterCalculator
 
                     If Operation = 1 Then
                         Console.WriteLine($"{FirstNumber} + {SecondNumber} = " & SecondNumber + FirstNumber)
+                        GetOutOfHere = True
                     ElseIf Operation = 2 Then
                         Console.WriteLine($"{FirstNumber} - {SecondNumber} = " & SecondNumber - FirstNumber)
+                        GetOutOfHere = True
                     ElseIf Operation = 3 Then
                         Console.WriteLine($"{FirstNumber} * {SecondNumber} = " & SecondNumber * FirstNumber)
+                        GetOutOfHere = True
                     ElseIf Operation = 4 Then
                         Console.WriteLine($"{FirstNumber} / {SecondNumber} = " & SecondNumber / FirstNumber)
+                        GetOutOfHere = True
                     ElseIf Operation > 4 Then
                         Console.WriteLine($"You choose {Operation} please choose 1-4.")
                     ElseIf Operation < 1 Then
