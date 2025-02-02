@@ -32,7 +32,7 @@ Module BetterCalculator
                     GetOutOfHere = True
                 Catch ex As Exception
                     If UserInput <> "Q" Then
-                        Console.WriteLine($"{UserInput} is not a whole number...")
+                        Console.WriteLine($"You Entered {UserInput}, that is not a whole number...")
                     ElseIf UserInput = "Q" Then
                         GetOutOfHere = True
                     End If
@@ -50,7 +50,7 @@ Module BetterCalculator
                     GetOutOfHere = True
                 Catch ex As Exception
                     If UserInput <> "Q" Then
-                        Console.WriteLine($"{UserInput} is not a whole number...")
+                        Console.WriteLine($"You Entered {UserInput}, this is not a whole number...")
                     ElseIf UserInput = "Q" Then
                         GetOutOfHere = True
                     End If
