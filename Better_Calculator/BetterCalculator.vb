@@ -20,12 +20,12 @@ Module BetterCalculator
         Dim GetOutOfHere As Boolean
         Dim UserInput As String
         Dim Operation As Integer
-
+        Console.WriteLine("Type 'Q' at any point to Quit")
         Do
             Do
                 GetOutOfHere = False
-                Console.WriteLine("Type 'Q' at any point to Quit")
-                Console.WriteLine("Enter 1st Number: ")
+
+                Console.WriteLine("Enter Number: ")
                 UserInput = Console.ReadLine()
                 Console.WriteLine($"You entered {UserInput}.")
                 Try
@@ -33,7 +33,7 @@ Module BetterCalculator
                     GetOutOfHere = True
                 Catch ex As Exception
                     If UserInput <> "Q" Then
-                        Console.WriteLine($"{UserInput} is not a whole number...")
+                        Console.WriteLine($"You Entered {UserInput}, that is not a whole number...")
                     ElseIf UserInput = "Q" Then
                         GetOutOfHere = True
                     End If
@@ -43,8 +43,7 @@ Module BetterCalculator
             GetOutOfHere = False
 
             Do While UserInput <> "Q" And GetOutOfHere = False
-                Console.WriteLine("Type 'Q' at any point to Quit")
-                Console.WriteLine("Enter 2nd Number: ")
+                Console.WriteLine("Enter Number: ")
                 UserInput = Console.ReadLine()
                 Console.WriteLine($"You entered {UserInput}.")
                 Try
@@ -52,7 +51,7 @@ Module BetterCalculator
                     GetOutOfHere = True
                 Catch ex As Exception
                     If UserInput <> "Q" Then
-                        Console.WriteLine($"{UserInput} is not a whole number...")
+                        Console.WriteLine($"You Entered {UserInput}, this is not a whole number...")
                     ElseIf UserInput = "Q" Then
                         GetOutOfHere = True
                     End If
@@ -92,6 +91,7 @@ Module BetterCalculator
                 End Try
             Loop
         Loop While UserInput <> "Q"
+        Console.WriteLine("Have A Nice Day!")
     End Sub
 
 End Module
