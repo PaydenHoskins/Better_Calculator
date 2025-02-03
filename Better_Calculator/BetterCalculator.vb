@@ -6,6 +6,7 @@
 
 Option Explicit On
 Option Strict On
+Option Compare Text
 
 Imports System.CodeDom
 Imports System.ComponentModel.Design
